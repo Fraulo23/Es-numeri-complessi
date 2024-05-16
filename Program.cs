@@ -11,10 +11,10 @@ namespace Es1
     {
         static void Main(string[] args)
         {
-            Complex c1=new Complex(1, 2);
-            Complex c2=new Complex(3, 4);
-            Console.WriteLine(c1+c2);
-            double mod=c1.Module();
+            Complex c1=Complex.ParseN(Console.ReadLine());
+            Console.WriteLine(c1.a);
+            Console.WriteLine(c1.b);
+            Console.ReadLine();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,9 +28,12 @@ namespace Es1
 
         public static Complex ParseN(string s)
         {
-            string[] parts = s.Split('i');
+            char[] segni = { '+', '-' };
+            string[] parts = s.Split(segni);
             float a = float.Parse(parts[0]);
-            float b = float.Parse(parts[1]);
+            int index = parts[1].IndexOf("i");
+            float b = float.Parse(parts[1].Substring(index+1));
+            
             return new Complex(a, b);
         }
         public static Complex ParseMA(string s)
